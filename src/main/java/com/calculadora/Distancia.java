@@ -4,13 +4,27 @@ public class Distancia {
     private final double milhasEmQuilometros = 1.609;
     private final double quilometrosEmMilhas = 0.6214;
 
-    public double ConverterQuilometrosParaMilhas(double quilometros) {
-        double resultado = quilometros * quilometrosEmMilhas;
+    enum TipoConversao {
+        QuilimetrosParaMilhas, MilhasParaQuilometros
+    }
+
+    public double Converter(TipoConversao tipo, double valor) throws Exception {
+        double resultado = 0;
+
+        if (tipo == null)
+            throw new IllegalArgumentException("Tipo de conversão não suportado");
+
+        switch (tipo) {
+            case QuilimetrosParaMilhas:
+                resultado = valor * quilometrosEmMilhas;
+                break;
+            case MilhasParaQuilometros:
+            default:
+                resultado = valor * milhasEmQuilometros;
+                break;
+        }
+
         return resultado;
     }
 
-    public double ConverterMilhasParaQuilometros(double milhas) {
-        double resultado = milhas * milhasEmQuilometros;
-        return resultado;
-    }
 }
