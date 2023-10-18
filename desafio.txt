@@ -1,0 +1,1 @@
+Seguindo os passos da videoaula foi possível atingir 100% de cobertura na classe Distancia, sendo assim, acredito que seja possível atingir os 100% do projeto inteiro, basta criar um teste para a classe Main.
